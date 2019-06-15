@@ -1,0 +1,18 @@
+<ul class="field-guide-toc">
+  {{#each sortedTocs as |toc|}}
+    {{#if toc.pages}}
+      <li class="field-guide-toc-item">
+        <span style="padding-left:{{@level}}em;">
+          {{capitalize toc.title}}
+        </span>
+        <TableOfContents @tocs={{toc.pages}} @level={{inc @level}}/>
+      </li>
+    {{else}}
+      {{#link-to 'show' toc.id}}
+        <li class="field-guide-toc-item field-guide-toc-item-link" style="padding-left:{{@level}}em;">
+          {{capitalize toc.title}}
+        </li>
+      {{/link-to}}
+    {{/if}}
+  {{/each}}
+</ul>
