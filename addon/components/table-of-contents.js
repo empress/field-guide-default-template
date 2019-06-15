@@ -1,10 +1,15 @@
 import Component from '@ember/component';
 import layout from '../templates/components/table-of-contents';
 import { computed } from '@ember/object';
+import { htmlSafe } from '@ember/template';
 
 export default Component.extend({
   layout,
   tagName: '',
+
+  leftPadStyle: computed(function() {
+    return htmlSafe(`padding-left:${this.level}em;`);
+  }),
 
   sortedTocs: computed('tocs', function() {
     return this.tocs.sort((a, b) => {
