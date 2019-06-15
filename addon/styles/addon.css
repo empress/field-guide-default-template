@@ -2,7 +2,7 @@
   min-height: 100vh;
 }
 
-.field-guide-wrapper nav {
+.field-guide-wrapper .field-guide-sidenav {
   width: 15rem;
   position: fixed;
   top: 0;
