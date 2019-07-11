@@ -3,7 +3,7 @@
 }
 
 .field-guide-wrapper .field-guide-sidenav {
-  width: 15rem;
+  width: 241px;
   position: fixed;
   top: 0;
   left: 0;
@@ -83,13 +83,12 @@
 }
 
 .field-guide-wrapper-full-height > main {
-  margin-left: 15rem;
-
+  margin-left: 241px;
   padding: 2em 4em;
 }
 
 .field-guide-footer {
-  margin-left: 15rem;
+  margin-left: 241px;
   background-color: #EEE;
   padding: 1em 2em;
   display: flex;
