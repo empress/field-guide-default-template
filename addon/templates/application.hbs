@@ -1,5 +1,5 @@
 <div class="field-guide-wrapper">
-  <nav class="field-guide-sidenav">
+  <nav class="field-guide-sidenav {{if showSideNav "field-guide-sidenav-always-show"}}">
     {{#link-to "show" "index" class="home-link"}}
       {{#if fieldGuideConfig.logo}}
         <img class="field-guide-logo" src={{fieldGuideConfig.logo}} alt="{{fieldGuideConfig.name}} Field Guide Logo">
@@ -15,6 +15,11 @@
   </nav>
   <div class="field-guide-wrapper-full-height">
     <main>
+      <button class="field-guide-show-sidenav" {{action (mut showSideNav) (not showSideNav)}}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="25">
+          <path d="M4 10h24a2 2 0 0 0 0-4H4a2 2 0 0 0 0 4zm24 4H4a2 2 0 0 0 0 4h24a2 2 0 0 0 0-4zm0 8H4a2 2 0 0 0 0 4h24a2 2 0 0 0 0-4z"/>
+        </svg>
+      </button>
       {{outlet}}
     </main>
     <footer class="field-guide-footer">

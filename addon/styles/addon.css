@@ -3,6 +3,8 @@
 }
 
 .field-guide-wrapper .field-guide-sidenav {
+  transition: margin-left 0.5s ease;
+  background: white;
   width: 241px;
   position: fixed;
   top: 0;
@@ -136,4 +138,43 @@
   border-top-style: solid;
   padding: 10px;
   margin: 0;
+}
+
+.field-guide-show-sidenav {
+  display: none;
+
+  position: absolute;
+  top:5px;
+  left:5px;
+
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+@media screen and (max-width: 950px) {
+  .field-guide-wrapper-full-height > main {
+    margin-left: 0px;
+  }
+
+  .field-guide-wrapper .field-guide-sidenav {
+    width: 241px;
+    margin-left: -241px;
+  }
+
+  .field-guide-footer {
+    margin-left: 0px;
+  }
+
+  .field-guide-show-sidenav {
+    display: inherit;
+  }
+
+  .field-guide-sidenav-always-show {
+    margin-left: 0 !important;
+  }
 }
