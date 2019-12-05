@@ -3,6 +3,8 @@
     {{#link-to "show" "index" class="home-link"}}
       {{#if fieldGuideConfig.logo}}
         <img class="field-guide-logo" src={{fieldGuideConfig.logo}} alt="{{fieldGuideConfig.name}} Field Guide Logo">
+      {{else}}
+        <span class="field-guide-fake-logo">{{fieldGuideConfig.name}}</span>
       {{/if}}
       <span>
         {{fieldGuideConfig.name}} Field Guide
