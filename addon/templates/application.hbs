@@ -7,7 +7,11 @@
         <span class="field-guide-fake-logo">{{fieldGuideConfig.name}}</span>
       {{/if}}
       <span>
-        {{fieldGuideConfig.name}} Field Guide
+        {{#if fieldGuideConfig.tagLine}}
+          {{fieldGuideConfig.tagLine}}
+        {{else}}
+          {{fieldGuideConfig.name}} Field Guide
+        {{/if}}
       </span>
     {{/link-to}}
 
