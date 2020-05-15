@@ -20,6 +20,14 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    'field-guide': {
+      social: [{
+        name: 'github',
+        title: 'Field Guide Default Template',
+        link: 'https://github.com/empress/field-guide-default-template'
+      }]
     }
   };
 

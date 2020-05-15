@@ -39,8 +39,8 @@
           {{/if}}
 
           {{#each fieldGuideConfig.social as |social|}}
-            <a href={{social.link}} title={{social.name}} target="_blank" rel="noopener">
-              <img src="/icons/social/{{social.name}}.svg" alt={{social.name}}>
+            <a href={{social.link}} title={{social.title}} target="_blank" rel="noopener">
+              <img src="/icons/social/{{social.name}}.svg" alt="" role="presentation">
             </a>
           {{/each}}
         </ul>
