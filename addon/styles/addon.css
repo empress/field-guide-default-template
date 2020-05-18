@@ -125,8 +125,14 @@ body {
   flex-grow: 0;
 }
 
-.field-guide-socials svg {
-  max-width: 20px
+.field-guide-socials img {
+  max-width: 20px;
+  margin-left: 0.7em;
+  height: auto;
+}
+
+.field-guide-socials a {
+  text-decoration: none;
 }
 
 .field-guide-socials {
