@@ -1,15 +1,12 @@
 'use strict';
 const Funnel = require('broccoli-funnel');
-const mergeTrees = require('broccoli-merge-trees');
+const { join } = require('path');
 
 module.exports = {
   name: require('./package').name,
 
-  treeForPublic(tree) {
-    var assetsTree = new Funnel('tests/dummy/public');
-    return mergeTrees([tree, assetsTree], {
-      overwrite: true
-    });
+  treeForPublic() {
+    return new Funnel(join(this.root, 'public'));
   },
 
   contentFor(type, config) {
