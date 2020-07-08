@@ -1,9 +1,9 @@
 field-guide-default-template
 ==============================================================================
 
-This is a template designed to work with [field-guide](https://github.com/empress/empress-blog) and is a fully-functional, static site implementation of a documentation site built on EmberJS with fully working out of the box SEO friendly output. It supports being hosted on Netlify, Github Pages, AWS S3 or any other static site hosting solution.
+This is a template designed to work with [field-guide](https://github.com/empress/field-guide) and is a fully-functional, static site implementation of a documentation site built on EmberJS with fully working out of the box SEO friendly output. It supports being hosted on Netlify, Github Pages, AWS S3 or any other static site hosting solution.
 
-For more information on how to use this system [read the Field Guide documentation](https://github.com/empress/field-guide/blob/master/README.md) but if you want to get started straight away, try the quick start below.
+For more information on how to use this system [read the Field Guide documentation](https://github.com/empress/field-guide#readme) but if you want to get started straight away, try the quick start below.
 
 If you want an example of this "in production" then check out the [Ember Styleguide](https://ember-styleguide.netlify.app). If you use this in production let me know [on Twitter](https://twitter.com/real_ate) and I can add a "built with field-guide" wiki.
 
@@ -14,6 +14,7 @@ Quick Start
 
 ```sh
 npm init ember-addon super-addon
+
 cd super-addon
 
 ember install field-guide field-guide-default-template
@@ -21,8 +22,7 @@ ember install field-guide field-guide-default-template
 
 It will ask you if you want to update the `index.html` file and you should say yes 👍
 
-If you want to see Field Guide running on your local machine just run `npm start` and you will
-be able to navigate to  [http://localhost:4200](http://localhost:4200) to see the system in action.
+If you want to see Field Guide running on your local machine just run `npm start` and you will be able to navigate to  [http://localhost:4200](http://localhost:4200) to see the system in action.
 
 Compatibility
 ------------------------------------------------------------------------------
