@@ -1,18 +1,18 @@
-{{! template-lint-disable no-curly-component-invocation no-implicit-this no-link-to-positional-params }}
+{{! template-lint-disable no-curly-component-invocation no-link-to-positional-params }}
 {{! template-lint-configure no-inline-styles {"allowDynamicStyles": true} }}
 
 <ul class="field-guide-toc">
-  {{#each sortedTocs as |toc|}}
+  {{#each this.sortedTocs as |toc|}}
     {{#if toc.pages}}
       <li class="field-guide-toc-item">
-        <span style={{leftPadStyle}}>
+        <span style={{this.leftPadStyle}}>
           {{capitalize toc.title}}
         </span>
         <TableOfContents @tocs={{toc.pages}} @level={{inc @level}}/>
       </li>
     {{else}}
       {{#link-to "show" toc.id}}
-        <li class="field-guide-toc-item field-guide-toc-item-link" style={{leftPadStyle}}>
+        <li class="field-guide-toc-item field-guide-toc-item-link" style={{this.leftPadStyle}}>
           {{capitalize toc.title}}
         </li>
       {{/link-to}}
