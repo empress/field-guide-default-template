@@ -1,3 +1,4 @@
+/* eslint-disable ember/no-classic-components, ember/no-classic-classes, ember/require-computed-property-dependencies, prettier/prettier */
 import Component from '@ember/component';
 import layout from '../templates/components/table-of-contents';
 import { computed } from '@ember/object';
