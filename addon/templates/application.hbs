@@ -1,7 +1,7 @@
-{{! template-lint-disable link-rel-noopener no-action no-curly-component-invocation no-link-to-positional-params require-button-type require-valid-alt-text }}
+{{! template-lint-disable link-rel-noopener no-action require-button-type require-valid-alt-text }}
 <div class="field-guide-wrapper">
   <nav class="field-guide-sidenav {{if this.showSideNav "field-guide-sidenav-always-show"}}">
-    {{#link-to "show" "index" class="home-link"}}
+    <LinkTo @route="show" @model="index" class="home-link">
       {{#if this.fieldGuideConfig.logo}}
         <img class="field-guide-logo" src={{this.fieldGuideConfig.logo}} alt="{{this.fieldGuideConfig.name}} Field Guide Logo">
       {{else}}
@@ -14,7 +14,7 @@
           {{this.fieldGuideConfig.name}} Field Guide
         {{/if}}
       </span>
-    {{/link-to}}
+    </LinkTo>
 
     <div class="field-guide-table-of-contents">
       <TableOfContents @tocs={{this.model}} @level={{1}}/>

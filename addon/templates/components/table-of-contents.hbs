@@ -1,4 +1,3 @@
-{{! template-lint-disable no-curly-component-invocation no-link-to-positional-params }}
 {{! template-lint-configure no-inline-styles {"allowDynamicStyles": true} }}
 
 <ul class="field-guide-toc">
@@ -11,11 +10,11 @@
         <TableOfContents @tocs={{toc.pages}} @level={{inc @level}}/>
       </li>
     {{else}}
-      {{#link-to "show" toc.id}}
+      <LinkTo @route="show" @model={{toc.id}}>
         <li class="field-guide-toc-item field-guide-toc-item-link" style={{this.leftPadStyle}}>
           {{capitalize toc.title}}
         </li>
-      {{/link-to}}
+      </LinkTo>
     {{/if}}
   {{/each}}
 </ul>
