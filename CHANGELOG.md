@@ -1,3 +1,8 @@
+2.0.0 / 2021-09-16
+==================
+
+  * breaking: Drop support for Ember &lt; 3.12 and update to 3.28 using ember-cli-update  #32 from @mansona
+
 1.3.1 / 2020-09-10
 ==================
 
