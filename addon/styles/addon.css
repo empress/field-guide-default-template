@@ -63,7 +63,7 @@ body {
 }
 
 .active .field-guide-toc-item {
-  background-color: #EEE;
+  background-color: #F0F0F0;
   border-left: 5px solid #777;
   box-sizing: border-box;
 }
@@ -73,7 +73,7 @@ body {
 }
 
 .field-guide-toc-item-link:hover {
-  background-color: #EEE;
+  background-color: #F0F0F0;
 }
 
 .field-guide-wrapper .home-link {
@@ -107,7 +107,7 @@ body {
 
 .field-guide-footer {
   margin-left: 241px;
-  background-color: #EEE;
+  background-color: #F0F0F0;
   padding: 1em 2em;
   display: flex;
   justify-content: space-between;
