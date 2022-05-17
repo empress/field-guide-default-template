@@ -1,3 +1,8 @@
+3.0.0 / 2022-05-17
+==================
+* Pick gray that increases contrast #38 from @MinThaMie
+* breaking drop support for Ember &lt; 3.16 and update field-guide #33 from @mansona
+
 2.0.0 / 2021-09-16
 ==================
 
