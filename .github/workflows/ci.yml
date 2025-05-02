@@ -5,11 +5,10 @@ on:
     branches:
       - master
       - main
-      - "v*"
   pull_request:
 
 env:
-  NODE_VERSION: 10
+  NODE_VERSION: 20
   FORCE_COLOR: 1
 
 jobs:
@@ -18,41 +17,43 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - run: npm i -g npm@7
-      - run: npm ci
-      - run: npm run lint:hbs
-      - run: npm run lint:js
+          cache: pnpm
+      - run: pnpm i
+      - run: pnpm run lint:hbs
+      - run: pnpm run lint:js
 
   test:
     name: Tests
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - uses: mansona/npm-lockfile-version@v1
-      - run: npm i -g npm@7
-      - run: npm ci
-      - run: npm run test:ember
+          cache: pnpm
+      - run: pnpm i
+      - run: pnpm run test:ember
 
   floating-dependencies:
     name: Floating Dependencies
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - run: npm i -g npm@7
-      - run: npm install --no-package-lock
-      - run: npm run test:ember
+          cache: pnpm
+      - run: pnpm install --no-lockfile
+      - run: pnpm run test:ember
 
   try-scenarios:
     name: "ember-try: ${{ matrix.ember-try-scenario }}"
@@ -78,11 +79,12 @@ jobs:
           - ember-release-no-deprecations
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - run: npm i -g npm@7
-      - run: npm ci
+          cache: pnpm
+      - run: pnpm i
       - name: test
         run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
