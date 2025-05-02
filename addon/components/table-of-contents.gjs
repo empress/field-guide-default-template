@@ -1,19 +1,40 @@
 /* eslint-disable ember/no-classic-components, ember/no-classic-classes, ember/require-computed-property-dependencies, prettier/prettier */
-import Component from '@ember/component';
-import layout from '../templates/components/table-of-contents';
-import { computed } from '@ember/object';
+import Component from '@glimmer/component';
 import { htmlSafe } from '@ember/template';
+import capitalize from "field-guide-default-template/helpers/capitalize";
+import TableOfContents from "field-guide-default-template/components/table-of-contents";
+import inc from "field-guide-default-template/helpers/inc";
+import { LinkTo } from "@ember/routing";
 
-export default Component.extend({
-  layout,
-  tagName: '',
+export default class TableOfContentsComponent extends Component {
+  <template>
+    {{!-- template-lint-configure no-inline-styles {"allowDynamicStyles": true} --}}
+    <ul class="field-guide-toc">
+      {{#each this.sortedTocs as |toc|}}
+        {{#if toc.pages}}
+          <li class="field-guide-toc-item">
+            <span style={{this.leftPadStyle}}>
+              {{capitalize toc.title}}
+            </span>
+            <TableOfContents @tocs={{toc.pages}} @level={{inc @level}} />
+          </li>
+        {{else}}
+          <LinkTo @route="show" @model={{toc.id}}>
+            <li class="field-guide-toc-item field-guide-toc-item-link" style={{this.leftPadStyle}}>
+              {{capitalize toc.title}}
+            </li>
+          </LinkTo>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </template>
 
-  leftPadStyle: computed(function() {
-    return htmlSafe(`padding-left:${this.level}em;`);
-  }),
+  get leftPadStyle() {
+    return htmlSafe(`padding-left:${this.args.level}em;`);
+  }
 
-  sortedTocs: computed('tocs', function() {
-    return this.tocs.sort((a, b) => {
+  get sortedTocs() {
+    return this.args.tocs.sort((a, b) => {
       // index a the top always
       if(a.title === 'index' && b.title !== 'index') {
         return -1;
@@ -25,26 +46,5 @@ export default Component.extend({
 
       return a.title.localeCompare(b.title);
     });
-  })
-});
-
-{{! template-lint-configure no-inline-styles {"allowDynamicStyles": true} }}
-
-<ul class="field-guide-toc">
-  {{#each this.sortedTocs as |toc|}}
-    {{#if toc.pages}}
-      <li class="field-guide-toc-item">
-        <span style={{this.leftPadStyle}}>
-          {{capitalize toc.title}}
-        </span>
-        <TableOfContents @tocs={{toc.pages}} @level={{inc @level}}/>
-      </li>
-    {{else}}
-      <LinkTo @route="show" @model={{toc.id}}>
-        <li class="field-guide-toc-item field-guide-toc-item-link" style={{this.leftPadStyle}}>
-          {{capitalize toc.title}}
-        </li>
-      </LinkTo>
-    {{/if}}
-  {{/each}}
-</ul>
+  }
+};
