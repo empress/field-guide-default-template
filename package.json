@@ -29,8 +29,11 @@
   "dependencies": {
     "broccoli-funnel": "^3.0.3",
     "ember-angle-bracket-invocation-polyfill": "^3.0.1",
-    "ember-cli-babel": "^7.26.6",
-    "ember-cli-htmlbars": "^5.7.1"
+    "ember-auto-import": "^2.10.0",
+    "ember-cli-babel": "^8.2.0",
+    "ember-cli-htmlbars": "^6.3.0",
+    "ember-route-template": "^1.0.3",
+    "ember-template-imports": "^4.3.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
@@ -41,9 +44,9 @@
     "auto-changelog": "github:mansona/auto-changelog#epic",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
-    "ember-auto-import": "^1.11.3",
     "ember-cli": "~3.28.0",
     "ember-cli-dependency-checker": "^3.2.0",
+    "ember-cli-fastboot": "^4.1.5",
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
@@ -71,9 +74,11 @@
     "lint-to-the-future-eslint": "^0.2.1",
     "loader.js": "^4.7.0",
     "npm-run-all": "^4.1.5",
+    "prember": "^2.1.0",
     "prettier": "^2.3.2",
     "qunit": "^2.16.0",
-    "qunit-dom": "^1.6.0"
+    "qunit-dom": "^1.6.0",
+    "webpack": "^5.99.7"
   },
   "engines": {
     "node": "12.* || 14.* || >= 16"
@@ -83,5 +88,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
 }
