@@ -43,13 +43,13 @@ export default RouteTemplate(
         <ul class="field-guide-socials">
           {{#if @controller.fieldGuideConfig.github}}
             <a href={{@controller.fieldGuideConfig.github}} title="github" target="_blank" rel="noopener">
-              <img src="/icons/social/github.svg" alt role="presentation">
+              <img src="/icons/social/github.svg" alt>
             </a>
           {{/if}}
 
           {{#each @controller.fieldGuideConfig.social as |social|}}
             <a href={{social.link}} title={{social.title}} target="_blank" rel="noopener">
-              <img src="/icons/social/{{social.name}}.svg" alt role="presentation">
+              <img src="/icons/social/{{social.name}}.svg" alt>
             </a>
           {{/each}}
         </ul>
