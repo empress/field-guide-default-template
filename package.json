@@ -14,7 +14,6 @@
   },
   "scripts": {
     "build": "ember build --environment=production",
-    "changelog": "auto-changelog --template changelog.template --unreleased-only --prepend --load-github-issue-data --github-cache-dir .changelog",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
@@ -41,7 +40,6 @@
     "@embroider/test-setup": "^0.43.5",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
-    "auto-changelog": "github:mansona/auto-changelog#epic",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-cli": "~3.28.0",
@@ -78,8 +76,10 @@
     "prettier": "^2.3.2",
     "qunit": "^2.16.0",
     "qunit-dom": "^1.6.0",
+    "release-plan": "^0.16.0",
     "webpack": "^5.99.7"
   },
+  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f",
   "engines": {
     "node": "12.* || 14.* || >= 16"
   },
@@ -88,6 +88,5 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  },
-  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
+  }
 }

@@ -1,3 +1,5 @@
+# Changelog
+
 3.0.0 / 2022-05-17
 ==================
 * Pick gray that increases contrast #38 from @MinThaMie
