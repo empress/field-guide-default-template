@@ -8,6 +8,12 @@ If you want an example of this "in production" then check out the [Ember Stylegu
 
 You do not need to be a web developer to be able to use this system. You just write markdown files and the rest of the work is performed by EmberJS' build system.
 
+## Compatibility
+
+- Ember.js v3.28 or above
+- Ember CLI v3.28 or above
+- Node.js v20 or above
+
 ## Quick Start
 
 ```sh
@@ -21,12 +27,6 @@ ember install field-guide field-guide-default-template
 It will ask you if you want to update the `index.html` file and you should say yes 👍
 
 If you want to see Field Guide running on your local machine just run `npm start` and you will be able to navigate to  [http://localhost:4200](http://localhost:4200) to see the system in action.
-
-## Compatibility
-
-- Ember.js v3.28 or above
-- Ember CLI v3.28 or above
-- Node.js v20 or above
 
 ## Contributing
 
