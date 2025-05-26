@@ -1,4 +1,4 @@
-/* eslint-disable ember/no-classic-components, ember/no-classic-classes, ember/require-tagless-components, ember/no-actions-hash, prettier/prettier */
+/* eslint-disable ember/no-classic-components, ember/no-classic-classes, ember/require-tagless-components, ember/no-actions-hash */
 import Component from '@ember/component';
 
 export default Component.extend({
@@ -6,7 +6,7 @@ export default Component.extend({
 
   actions: {
     clickButton() {
-      this.set('count', this.count+1);
-    }
-  }
+      this.set('count', this.count + 1);
+    },
+  },
 });

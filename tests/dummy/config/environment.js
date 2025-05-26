@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 'use strict';
 
 module.exports = function (environment) {
@@ -21,12 +20,14 @@ module.exports = function (environment) {
     },
 
     'field-guide': {
-      social: [{
-        name: 'github',
-        title: 'Field Guide Default Template',
-        link: 'https://github.com/empress/field-guide-default-template'
-      }]
-    }
+      social: [
+        {
+          name: 'github',
+          title: 'Field Guide Default Template',
+          link: 'https://github.com/empress/field-guide-default-template',
+        },
+      ],
+    },
   };
 
   if (environment === 'development') {
