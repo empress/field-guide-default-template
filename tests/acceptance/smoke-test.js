@@ -1,7 +1,6 @@
 import { module, test } from 'qunit';
 import { visit } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
-import fetch from 'fetch';
 
 function getAllPageUrls(page, urls = []) {
   const { pages, id } = page;
