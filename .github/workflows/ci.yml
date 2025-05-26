@@ -3,9 +3,13 @@ name: CI
 on:
   push:
     branches:
-      - master
       - main
-  pull_request:
+      - master
+  pull_request: {}
+
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
 
 env:
   NODE_VERSION: 20
@@ -28,8 +32,9 @@ jobs:
       - run: pnpm run lint:js
 
   test:
-    name: Tests
+    name: "Tests"
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v4
@@ -38,12 +43,13 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
-      - run: pnpm i
+      - run: pnpm install
       - run: pnpm run test:ember
 
-  floating-dependencies:
-    name: Floating Dependencies
+  floating:
+    name: "Floating Dependencies"
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v4
@@ -56,23 +62,23 @@ jobs:
       - run: pnpm run test:ember
 
   try-scenarios:
-    name: "ember-try: ${{ matrix.ember-try-scenario }}"
+    name: ${{ matrix.try-scenario }}
     runs-on: ubuntu-latest
-    timeout-minutes: 7
-    needs: test
+    needs: "test"
+    timeout-minutes: 10
 
     strategy:
       fail-fast: false
       matrix:
-        ember-try-scenario:
-          - ember-lts-3.16
-          - ember-lts-3.20
-          - ember-lts-3.24
+        try-scenario:
+          - ember-lts-3.28
+          - ember-lts-4.4
+          - ember-lts-4.8
+          - ember-lts-4.12
+          - ember-lts-5.4
           - ember-release
           - ember-beta
           - ember-canary
-          - ember-default-with-jquery
-          - ember-classic
           - embroider-safe
           - embroider-optimized
           - no-deprecations
@@ -85,6 +91,6 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
-      - run: pnpm i
-      - name: test
-        run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
+      - run: pnpm install
+      - name: Run Tests
+        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
