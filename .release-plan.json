@@ -1,26 +1,18 @@
 {
   "solution": {
     "field-guide-default-template": {
-      "impact": "major",
-      "oldVersion": "3.0.0",
-      "newVersion": "4.0.0",
+      "impact": "patch",
+      "oldVersion": "4.0.0",
+      "newVersion": "4.0.1",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "major",
-          "reason": "Appears in changelog section :boom: Breaking Change"
-        },
-        {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
-        },
-        {
           "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-05-27)\n\n* field-guide-default-template 4.0.0 (major)\n\n#### :boom: Breaking Change\n* `field-guide-default-template`\n  * [#56](https://github.com/empress/field-guide-default-template/pull/56) update to 5.12 with ember-cli-update and drop support for Ember < 3.28 ([@mansona](https://github.com/mansona))\n  * [#52](https://github.com/empress/field-guide-default-template/pull/52) convert to template tag with the @embroider/template-tag-codemod ([@mansona](https://github.com/mansona))\n\n#### :rocket: Enhancement\n* `field-guide-default-template`\n  * [#55](https://github.com/empress/field-guide-default-template/pull/55) fix use of action helper ([@mansona](https://github.com/mansona))\n\n#### :house: Internal\n* `field-guide-default-template`\n  * [#53](https://github.com/empress/field-guide-default-template/pull/53) start using release-plan ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
+  "description": "## Release (2025-05-27)\n\n* field-guide-default-template 4.0.1 (patch)\n\n#### :bug: Bug Fix\n* `field-guide-default-template`\n  * [#57](https://github.com/empress/field-guide-default-template/pull/57) fix copyright line in footer ([@mansona](https://github.com/mansona))\n\n#### Committers: 1\n- Chris Manson ([@mansona](https://github.com/mansona))\n"
 }

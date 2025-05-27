@@ -2,6 +2,17 @@
 
 ## Release (2025-05-27)
 
+* field-guide-default-template 4.0.1 (patch)
+
+#### :bug: Bug Fix
+* `field-guide-default-template`
+  * [#57](https://github.com/empress/field-guide-default-template/pull/57) fix copyright line in footer ([@mansona](https://github.com/mansona))
+
+#### Committers: 1
+- Chris Manson ([@mansona](https://github.com/mansona))
+
+## Release (2025-05-27)
+
 * field-guide-default-template 4.0.0 (major)
 
 #### :boom: Breaking Change
