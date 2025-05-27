@@ -18,29 +18,23 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   padding-top: 2em;
-
-  border-right-color: #DDD;
-  border-right-width: 1px;
-  border-right-style: solid;
-
+  border-right: #ddd 1px solid;
 }
 
 .field-guide-logo {
   max-width: 50%;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .field-guide-fake-logo {
   font-size: 40px;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: "Fredericka the Great", cursive;
   text-align: center;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .field-guide-table-of-contents {
@@ -50,20 +44,18 @@ body {
 }
 
 .field-guide-toc {
-  list-style-image: none;
-  list-style-type: none;
-  list-style-position: outside;
+  list-style: none outside none;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
 .field-guide-toc-item {
-  padding: .5em 0;
+  padding: 0.5em 0;
 }
 
 .active .field-guide-toc-item {
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   border-left: 5px solid #777;
   box-sizing: border-box;
 }
@@ -73,7 +65,7 @@ body {
 }
 
 .field-guide-toc-item-link:hover {
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
 }
 
 .field-guide-wrapper .home-link {
@@ -81,12 +73,8 @@ body {
   text-decoration: none;
   color: inherit;
   width: 100%;
-
   padding-bottom: 1em;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #DDD;
-
+  border-bottom: #ddd 1px solid;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,7 +85,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 .field-guide-wrapper-full-height > main {
@@ -107,7 +94,7 @@ body {
 
 .field-guide-footer {
   margin-left: 241px;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   padding: 1em 2em;
   display: flex;
   justify-content: space-between;
@@ -137,25 +124,25 @@ body {
 
 .field-guide-socials {
   margin: 0;
-  padding: 0 0 .6em 0;
+  padding: 0 0 0.6em;
   text-align: right;
 }
 
 .field-guide-socials li {
   display: inline-block;
   padding: 0;
-  marign: 0;
+  margin: 0;
 }
 
 .self-executing-code-block {
-  border-color: #CCC;
+  border-color: #ccc;
   border-style: solid;
   border-width: 1px;
   border-radius: 3px;
 }
 
 .self-executing-code-block pre {
-  border-color: #CCC;
+  border-color: #ccc;
   border-width: 1px;
   border-top-style: solid;
   padding: 10px;
@@ -164,23 +151,22 @@ body {
 
 .field-guide-show-sidenav {
   display: none;
-
   position: absolute;
-  top:5px;
-  left:5px;
-
+  top: 5px;
+  left: 5px;
   background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
+/* stylelint-disable-next-line media-feature-range-notation */
 @media screen and (max-width: 950px) {
   .field-guide-wrapper-full-height > main {
-    margin-left: 0px;
+    margin-left: 0;
   }
 
   .field-guide-wrapper .field-guide-sidenav {
@@ -189,7 +175,7 @@ body {
   }
 
   .field-guide-footer {
-    margin-left: 0px;
+    margin-left: 0;
   }
 
   .field-guide-show-sidenav {
