@@ -63,7 +63,7 @@ export default RouteTemplate(
         </main>
         <footer class="field-guide-footer">
           <MarkdownToHtml
-            @markdown={{this.fieldGuideConfig.copyright}}
+            @markdown={{@controller.fieldGuideConfig.copyright}}
             class="field-guide-footer-info"
           />
           <div class="field-guide-footer-right">
