@@ -3,6 +3,8 @@ import { LinkTo } from '@ember/routing';
 import TableOfContents from 'field-guide-default-template/components/table-of-contents';
 import not from 'field-guide-default-template/helpers/not';
 import MarkdownToHtml from 'ember-cli-showdown/components/markdown-to-html';
+import { on } from '@ember/modifier';
+import { fn } from '@ember/helper';
 
 export default RouteTemplate(
   <template>
@@ -43,9 +45,9 @@ export default RouteTemplate(
           {{outlet}}
           <button
             class="field-guide-show-sidenav"
-            {{action
-              (mut @controller.showSideNav)
-              (not @controller.showSideNav)
+            {{on
+              "click"
+              (fn (mut @controller.showSideNav) (not @controller.showSideNav))
             }}
           >
             <svg
